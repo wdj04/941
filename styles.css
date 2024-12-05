@@ -67,7 +67,7 @@ body {
   background: linear-gradient(
     rgb(255, 255, 255),
     rgba(0, 70, 190, 0.8)
-  ), url('images/7.png');
+  ), url('7.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -870,7 +870,7 @@ body {
   width: 100%;
 }
 
-/* 确保内容对齐 */
+/* 确���内容对齐 */
 .contact-section,
 .social-section {
   display: flex;
@@ -904,5 +904,21 @@ body {
     .feature-card {
         min-height: auto;
     }
+}
+
+/* 添加动画相关的样式 */
+.section-title, .feature-card, .practice-card, .competition-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+/* 当元素可见时的样式 */
+.section-title.visible, 
+.feature-card.visible, 
+.practice-card.visible, 
+.competition-item.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 

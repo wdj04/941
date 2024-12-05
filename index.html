@@ -229,14 +229,16 @@
                 progressBar.style.width = scrolled + '%';
             });
 
-            // 添加滚动显示动画
+            // 创建 Intersection Observer
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.classList.add('visible');
                     }
                 });
+            }, {
+                threshold: 0.1,  // 当元素出现 10% 时触发
+                rootMargin: '0px'  // 可以调整触发的位置
             });
 
             // 观察所有需要动画的元素
